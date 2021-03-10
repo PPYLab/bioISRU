@@ -6,7 +6,7 @@ Created on Wed Mar 10 14:44:39 2021
 """
 import numpy as np
 from process_model import BDO_production_film
-from mem_unit import membrane_sep as MEM
+from process_model import membrane_sep as MEM
 
 #Calculates water usage for biofilm process
 def water_film(land, flow):
