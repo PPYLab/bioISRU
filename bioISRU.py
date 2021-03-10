@@ -13,7 +13,7 @@ from process_model import BDO_production_film
 
 #Returns water, power and mass requirement under modeled biomass productivity, digester yeild, fermentation and material densities
 def wpm(biomass_productivity, digester_yield, fermentation_yield, PBR_density, reactor_density):
-    land = find_land(5000, biomass_productivity, digester_yield, fermentation_yield) #can change initial guess as needed
+    land = find_land(5000, biomass_productivity, digester_yield, fermentation_yield)[0] #can change initial guess as needed
     flow = BDO_production_film(land, biomass_productivity, digester_yield, fermentation_yield)[1]
     water, power, mass = specs(land, flow, biomass_productivity, digester_yield, fermentation_yield, PBR_density, reactor_density)
     
