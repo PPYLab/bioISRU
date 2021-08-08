@@ -18,7 +18,7 @@ def wpm(biomass_productivity, digester_yield, fermentation_yield, PBR_density, r
     flow = BDO_production_film(land, biomass_productivity, digester_yield, fermentation_yield)[1]
     water, power, mass = specs(land, flow, biomass_productivity, digester_yield, fermentation_yield, PBR_density, reactor_density)
     
-    return water, power, mass, land
+    return water, power, mass, land, flow
 
 #Load sample data set into Pandas dataframe
 sample = pd.read_csv('Sample_data_Peralta-Yahya.csv', nrows = 9)
@@ -30,7 +30,9 @@ water = [s[i][0] for i in range(len(s))]
 power = [s[i][1] for i in range(len(s))]
 mass =  [s[i][2] for i in range(len(s))]
 land =  [s[i][3] for i in range(len(s))]
+flow =  [s[i][4] for i in range(len(s))]
 
+sample['Flow'] = flow
 sample['Water'] = water
 sample['Power'] = power
 sample['Mass'] = mass

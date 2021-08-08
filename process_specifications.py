@@ -79,7 +79,7 @@ def tank_mass(vol, density):
 
 #Calculates mass of cyanobacterial support frame
 def frame_mass(land):
-    mass = 1.154*land/10000*1.38*0.38
+    mass = 1.154*land/10000*1.38*0.38 # 1.154 = (78/7.85)*(mass of biofilm PBR + water + algae + nutrients/ mass of suspended PBR + water + algae + nutrients) - i.e. mass frame must support
     return mass
 
 #Determines total water, power and mass usage for complete process using biofilm growth

@@ -333,33 +333,34 @@ def BDO_production_film(land, pr_gmd, enz_yield, ferm_yield):
 
 #Determines cyanobacterial cultivation land requirement based on biological process specifications (cyano productivity, digester yield and fermentation yield)
 #Requires starting guess for required land
+#Changed to target 10 tons of fuel production
 def find_land(start_area, pr_gmd, enz_yield, ferm_yield):
     land = start_area
     prod = 5
-    while prod < 15:
+    while prod < 10:
         land += 5000
         res = BDO_production_film(land, pr_gmd, enz_yield, ferm_yield)
         prod = res[0]
     land = land - 5000
-    while prod < 15:
+    while prod < 10:
         land += 1000
         res = BDO_production_film(land, pr_gmd, enz_yield, ferm_yield)
         prod = res[0]
     land = land - 1100
     prod = 5
-    while prod < 15:
+    while prod < 10:
         land += 100
         res = BDO_production_film(land, pr_gmd, enz_yield, ferm_yield)
         prod = res[0]
     land = land - 110
     prod = 5
-    while prod < 15:
+    while prod < 10:
         land += 10
         res = BDO_production_film(land, pr_gmd, enz_yield, ferm_yield)
         prod = res[0]
     land = land - 11
     prod = 5
-    while prod < 15:
+    while prod < 10:
         land += 1
         res = BDO_production_film(land, pr_gmd, enz_yield, ferm_yield)
         prod = res[0]
